@@ -51,7 +51,7 @@ Run the project
 - ``` GET/api/book/getbookbyid{id}.``` Returns a single book by id.
 - ``` POST/api/book/addbook.``` Adds a new book with authors to the Application.
 - ``` PUT/api/book/updatebook/{bookid}.``` Updates a book by the provided id.
-- ``` POST/api/book/addbookstofavoiritelist``` Adds books to favorite list.
+- ``` POST/api/book/addbookstofavoritelist``` Adds books to favorite list.
 
 
 
