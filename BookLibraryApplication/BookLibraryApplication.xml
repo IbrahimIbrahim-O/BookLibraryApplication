@@ -4,7 +4,7 @@
         <name>BookLibraryApplication</name>
     </assembly>
     <members>
-        <member name="M:BookLibraryApplication.Controllers.AuthorController.AddBook(BookLibraryApplication.Dto.Author.AddAutorDto)">
+        <member name="M:BookLibraryApplication.Controllers.AuthorController.AddAuthor(BookLibraryApplication.Dto.Author.AddAutorDto)">
             <summary>
             Adds a New Author to the Application
             </summary>
@@ -76,6 +76,13 @@
             <summary>
             Returns all categories in the Application
             </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BookLibraryApplication.Controllers.CategoryController.AddCategory(BookLibraryApplication.Dto.Category.AddCategoryDto)">
+            <summary>
+            Adds a New Author to the Application
+            </summary>
+            <param name="newCategory"></param>
             <returns></returns>
         </member>
         <member name="M:BookLibraryApplication.Controllers.CategoryController.UpdateCategory(System.Int32,BookLibraryApplication.Dto.Category.UpdateCategoryDto)">

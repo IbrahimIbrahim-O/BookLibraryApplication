@@ -35,7 +35,7 @@ namespace BookLibraryApplication.Controllers
         }
 
         /// <summary>
-        /// Adds a New Author to the Application
+        /// Adds a New Category to the Application
         /// </summary>
         /// <param name="newCategory"></param>
         /// <returns></returns>
