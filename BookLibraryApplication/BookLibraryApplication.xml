@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BookLibraryApplication</name>
+    </assembly>
+    <members>
+        <member name="M:BookLibraryApplication.Controllers.AuthorController.AddBook(BookLibraryApplication.Dto.Author.AddAutorDto)">
+            <summary>
+            Adds a New Author to the Application
+            </summary>
+            <param name="newAuthor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookLibraryApplication.Controllers.AuthorController.GetAllAuthors">
+            <summary>
+            Returns all Authors already created in the Application
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BookLibraryApplication.Controllers.AuthorController.DeleteAuthor(System.Int32)">
+            <summary>
+            Deletes Author by Id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookLibraryApplication.Controllers.BookController.GetAllBooks">
+            <summary>
+            Returns All Books in the Books Application
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BookLibraryApplication.Controllers.BookController.GetBookById(System.Int32)">
+            <summary>
+            Returns a single book by id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookLibraryApplication.Controllers.BookController.AddBook(BookLibraryApplication.Dto.Book.AddBookDto)">
+            <summary>
+            Adds a new book with authors to the applicaion
+            </summary>
+            <param name="newBook"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookLibraryApplication.Controllers.BookController.UpdateBook(System.Int32,BookLibraryApplication.Dto.Book.UpdateBookDto)">
+            <summary>
+            Updates a book by the provided id
+            </summary>
+            <param name="BookId"></param>
+            <param name="updatedBook"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookLibraryApplication.Controllers.BookController.AddBooksToFavoriteList(BookLibraryApplication.Dto.Book.AddFavoriteBooksDto)">
+            <summary>
+            Adds Books to the Favorite List
+            </summary>
+            <param name="favoriteBooks"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookLibraryApplication.Controllers.BookController.GetListOfFavoriteBooks">
+            <summary>
+            Returns List of Favorite books
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BookLibraryApplication.Controllers.BookController.DeleteBook(System.Int32)">
+            <summary>
+            Deletes a book by the given Id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookLibraryApplication.Controllers.CategoryController.GetAllBooks">
+            <summary>
+            Returns all categories in the Application
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BookLibraryApplication.Controllers.CategoryController.UpdateCategory(System.Int32,BookLibraryApplication.Dto.Category.UpdateCategoryDto)">
+            <summary>
+            Updates a category
+            </summary>
+            <param name="CategoryiD"></param>
+            <param name="updatedCategory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookLibraryApplication.Controllers.CategoryController.DeleteCategory(System.Int32)">
+            <summary>
+            Deletes a Category
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
