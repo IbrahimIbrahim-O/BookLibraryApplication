@@ -90,21 +90,23 @@ namespace BookLibraryApplication.Data
                         CategoryName = "Biographies & Memoirs"
                     }
                 );
+            
+
+            modelBuilder.Entity<AuthorBook>()
+                .HasOne(b => b.Book)
+                .WithMany(ba => ba.AuthorBooks)
+                .HasForeignKey(bi => bi.BookId);
+
+            modelBuilder.Entity<AuthorBook>()
+              .HasOne(b => b.Author)
+              .WithMany(ba => ba.AuthorBooks)
+              .HasForeignKey(bi => bi.AuthorsId);
 
             modelBuilder.Entity<AuthorBook>()
                 .HasData(
-                    new AuthorBook() { BookId = 1, AuthorsId = 1},
-                    new AuthorBook() { BookId = 2, AuthorsId = 2},
-                    new AuthorBook() { BookId = 3, AuthorsId = 3}
-                    );
-                //.HasOne(b => b.Book)
-                //.WithMany(ba => ba.AuthorBooks)
-                //.HasForeignKey(bi => bi.BookId));
-
-            //modelBuilder.Entity<AuthorBook>()
-            //  .HasOne(b => b.Author)
-            //  .WithMany(ba => ba.AuthorBooks)
-            //  .HasForeignKey(bi => bi.AuthorsId);
+                    new AuthorBook() { BookId = 1, AuthorsId = 1 },
+                    new AuthorBook() { BookId = 2, AuthorsId = 2 },
+                    new AuthorBook() { BookId = 3, AuthorsId = 3 });
 
             base.OnModelCreating(modelBuilder);
         }
