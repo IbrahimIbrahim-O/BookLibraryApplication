@@ -18,9 +18,34 @@ namespace BookLibraryApplication.Services.BookService
             _context = context;
         }
 
-        public Task<MessageOut> AddCategory(AddCategoryDto payload)
+        public async Task<MessageOut> AddCategory(AddCategoryDto payload)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var newCategory = new Category()
+                {
+                    CategoryName = payload.CategoryName
+                };
+
+                var checkForDuplicate = await _context.Categories.Where(x => x.CategoryName == payload.CategoryName).FirstOrDefaultAsync();
+
+                if (checkForDuplicate == null)
+
+                {
+                    _context.Categories.Add(newCategory);
+                    await _context.SaveChangesAsync();
+
+                    return new MessageOut { Message = $"{newCategory.CategoryName} was added succesfully", IsSuccessful = true };
+                }
+                else
+                {
+                    return new MessageOut { IsSuccessful = false, Message = $"{newCategory.CategoryName} already exists" };
+                }
+            }
+            catch (Exception ex)
+            {
+                return new MessageOut { IsSuccessful = false, Message = ex.Message };
+            }
         }
 
      

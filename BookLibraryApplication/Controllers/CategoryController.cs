@@ -35,6 +35,19 @@ namespace BookLibraryApplication.Controllers
         }
 
         /// <summary>
+        /// Adds a New Author to the Application
+        /// </summary>
+        /// <param name="newCategory"></param>
+        /// <returns></returns>
+        [HttpPost("AddCategory")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<ActionResult<MessageOut>> AddCategory(AddCategoryDto newCategory)
+        {
+            return Ok(await _categoryService.AddCategory(newCategory));
+        }
+
+        /// <summary>
         /// Updates a category
         /// </summary>
         /// <param name="CategoryiD"></param>

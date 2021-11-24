@@ -29,7 +29,7 @@ namespace BookLibraryApplication.Controllers
         [HttpPost("AddAuthor")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<MessageOut>> AddBook(AddAutorDto newAuthor)
+        public async Task<ActionResult<MessageOut>> AddAuthor(AddAutorDto newAuthor)
         {
             return Ok(await _authorService.AddAuthor(newAuthor));
         }
