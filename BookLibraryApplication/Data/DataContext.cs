@@ -26,9 +26,9 @@ namespace BookLibraryApplication.Data
                         ISBN = "145866",
                         IsFavorite = true,
                         CategoryId = 1,
-                        AuthorBooks = new List<AuthorBook> { 
-                            new AuthorBook(){BookId = 1, AuthorsId = 1 },
-                        }
+                        //AuthorBooks = new List<AuthorBook> { 
+                        //    new AuthorBook(){BookId = 1, AuthorsId = 1 },
+                        //}
                     },
                     new Book
                     {
@@ -38,9 +38,9 @@ namespace BookLibraryApplication.Data
                         ISBN = "45698",
                         IsFavorite = true,
                         CategoryId = 2,
-                        AuthorBooks = new List<AuthorBook> {
-                            new AuthorBook(){BookId = 2, AuthorsId = 2 },
-                        }
+                        //AuthorBooks = new List<AuthorBook> {
+                        //    new AuthorBook(){BookId = 2, AuthorsId = 2 },
+                        //}
                     },
                     new Book
                     {
@@ -49,10 +49,10 @@ namespace BookLibraryApplication.Data
                         ISBN = "",
                         IsFavorite = false,
                         CategoryId = 1,
-                        AuthorBooks = new List<AuthorBook>
-                        {
-                            new AuthorBook(){BookId = 3, AuthorsId = 3}
-                        }
+                        //AuthorBooks = new List<AuthorBook>
+                        //{
+                        //    new AuthorBook(){BookId = 3, AuthorsId = 3}
+                        //}
                     }
 
                 );
@@ -92,14 +92,19 @@ namespace BookLibraryApplication.Data
                 );
 
             modelBuilder.Entity<AuthorBook>()
-                .HasOne(b => b.Book)
-                .WithMany(ba => ba.AuthorBooks)
-                .HasForeignKey(bi => bi.BookId);
+                .HasData(
+                    new AuthorBook() { BookId = 1, AuthorsId = 1},
+                    new AuthorBook() { BookId = 2, AuthorsId = 2},
+                    new AuthorBook() { BookId = 3, AuthorsId = 3}
+                    );
+                //.HasOne(b => b.Book)
+                //.WithMany(ba => ba.AuthorBooks)
+                //.HasForeignKey(bi => bi.BookId));
 
-            modelBuilder.Entity<AuthorBook>()
-              .HasOne(b => b.Author)
-              .WithMany(ba => ba.AuthorBooks)
-              .HasForeignKey(bi => bi.AuthorsId);
+            //modelBuilder.Entity<AuthorBook>()
+            //  .HasOne(b => b.Author)
+            //  .WithMany(ba => ba.AuthorBooks)
+            //  .HasForeignKey(bi => bi.AuthorsId);
 
             base.OnModelCreating(modelBuilder);
         }
