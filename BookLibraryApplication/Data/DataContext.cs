@@ -95,16 +95,19 @@ namespace BookLibraryApplication.Data
                 .HasData(
                     new AuthorBook
                     {
+                        Id = 1,
                         BookId = 1,
                         AuthorsId = 1
                     },
                     new AuthorBook
                     {
+                        Id = 2,
                         BookId = 2,
                         AuthorsId = 2
                     },
                     new AuthorBook
                     {
+                        Id = 3,
                         BookId = 3,
                         AuthorsId = 3
                     }
