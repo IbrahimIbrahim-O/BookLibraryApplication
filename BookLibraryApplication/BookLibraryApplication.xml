@@ -17,6 +17,14 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:BookLibraryApplication.Controllers.AuthorController.UpdateAuthor(System.Int32,BookLibraryApplication.Dto.Author.UpdateAuthorDto)">
+            <summary>
+            Updates an Author
+            </summary>
+            <param name="AuthorId"></param>
+            <param name="updatedAuthor"></param>
+            <returns></returns>
+        </member>
         <member name="M:BookLibraryApplication.Controllers.AuthorController.DeleteAuthor(System.Int32)">
             <summary>
             Deletes Author by Id

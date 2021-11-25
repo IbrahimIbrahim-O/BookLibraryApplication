@@ -86,9 +86,12 @@ namespace BookLibraryApplication.Services.BookService
                     singleCategory.CategoryName = updatedCategory.CategoryName;
 
                     await _context.SaveChangesAsync();
-
+                    return new MessageOut { IsSuccessful = true, Message = $"{singleCategory.CategoryName} updated successfully" };
                 }
-                return new MessageOut { IsSuccessful = true, Message = $"{singleCategory.CategoryName} updated successfully" };
+                else
+                {
+                    return new MessageOut { IsSuccessful = false, Message = $"{updatedCategory.CategoryName} does not exist, please try again" };
+                }
             }
             catch (Exception ex)
             {

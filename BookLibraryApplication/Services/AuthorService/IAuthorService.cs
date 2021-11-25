@@ -11,6 +11,7 @@ namespace BookLibraryApplication.Services.AuthorService
     {
         Task<MessageOut> AddAuthor(AddAutorDto payload);
         Task<ServiceResponse<List<GetAuthorDto>>> GetAllAuthors();
+        Task<MessageOut> UpdateAuthor(int AuthorId, UpdateAuthorDto updateAuthor);
         Task<MessageOut> DeleteAuthor(int id);
 
     }

@@ -81,6 +81,8 @@ namespace BookLibraryApplication.Services.AuthorService
         }
 
 
+
+
         public async Task<MessageOut> DeleteAuthor(int id)
         {
             try
@@ -120,5 +122,31 @@ namespace BookLibraryApplication.Services.AuthorService
             }
         }
 
+        public async Task<MessageOut> UpdateAuthor(int AuthorId, UpdateAuthorDto updateAuthor)
+        {
+            try
+            {
+                var singleAuthor = await _context.Authors.Where(x => x.Id == AuthorId).FirstOrDefaultAsync();
+
+                if(singleAuthor != null)
+                {
+                    singleAuthor.AuthorName = updateAuthor.AuthorName;
+                    await _context.SaveChangesAsync();
+                    return new MessageOut
+                    {
+                        IsSuccessful = true,
+                        Message = $"{singleAuthor.AuthorName} updated succesfully"
+                    };
+                }
+                else
+                {
+                    return new MessageOut { IsSuccessful = false, Message = $"{updateAuthor.AuthorName} does not exist, please try again"};
+                }
+            }
+            catch (Exception ex)
+            {
+                return new MessageOut { IsSuccessful = false, Message = ex.Message };
+            }
+        }
     }
 }

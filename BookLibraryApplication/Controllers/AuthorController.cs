@@ -47,6 +47,28 @@ namespace BookLibraryApplication.Controllers
         }
 
         /// <summary>
+        /// Updates an Author
+        /// </summary>
+        /// <param name="AuthorId"></param>
+        /// <param name="updatedAuthor"></param>
+        /// <returns></returns>
+        [HttpPut("UpdateAuthor/{AuthorId}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<ActionResult<MessageOut>> UpdateAuthor(int AuthorId, UpdateAuthorDto updatedAuthor)
+        {
+            var response = await _authorService.UpdateAuthor(AuthorId, updatedAuthor);
+
+            if (response.IsSuccessful == false)
+            {
+                return NotFound(response);
+            }
+
+            return Ok(response);
+        }
+
+
+        /// <summary>
         /// Deletes Author by Id
         /// </summary>
         /// <param name="id"></param>

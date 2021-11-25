@@ -22,37 +22,32 @@ namespace BookLibraryApplication.Data
                     {
                         Id = 1,
                         Title = "Joys of Motherhood",
-                        Description = "About the expectations of the African Woman",
-                        ISBN = "145866",
+                        Description = "First published in 1979, The Joys of Motherhood is the story of Nnu Ego, a Nigerian woman struggling in a patriarchal society. " +
+                        "Unable to conceive in her first marriage," +
+                        " Nnu is banished to Lagos where she succeeds in becoming a mother.",
+                        ISBN = "0807616095",
                         IsFavorite = true,
                         CategoryId = 1,
-                        //AuthorBooks = new List<AuthorBook> { 
-                        //    new AuthorBook(){BookId = 1, AuthorsId = 1 },
-                        //}
                     },
                     new Book
                     {
                         Id = 2,
                         Title = "The 48 Laws of Power",
-                        Description = "Title speaks for itself",
-                        ISBN = "45698",
+                        Description = "The 48 Laws of Power (1998) is a non-fiction book by American author Robert Greene.The book is a bestseller," +
+                        "selling over 1.2 million copies in the United States, and is popular with prison inmates and celebrities",
+                        ISBN = "0140280197",
                         IsFavorite = true,
                         CategoryId = 2,
-                        //AuthorBooks = new List<AuthorBook> {
-                        //    new AuthorBook(){BookId = 2, AuthorsId = 2 },
-                        //}
                     },
                     new Book
                     {
                         Id = 3,
                         Title = "Things fall apart",
-                        ISBN = "",
+                        Description = " Traditionally structured, and peppered with Igbo proverbs, " +
+                        "it describes the simultaneous disintegration of its protagonist Okonkwo and of his village",
+                        ISBN = "0385474547",
                         IsFavorite = false,
                         CategoryId = 1,
-                        //AuthorBooks = new List<AuthorBook>
-                        //{
-                        //    new AuthorBook(){BookId = 3, AuthorsId = 3}
-                        //}
                     }
 
                 );
@@ -123,12 +118,6 @@ namespace BookLibraryApplication.Data
               .HasOne(b => b.Author)
               .WithMany(ba => ba.AuthorBooks)
               .HasForeignKey(bi => bi.AuthorsId);
-
-            //modelBuilder.Entity<AuthorBook>()
-            //    .HasData(
-            //        new AuthorBook() { BookId = 1, AuthorsId = 1 },
-            //        new AuthorBook() { BookId = 2, AuthorsId = 2 },
-            //        new AuthorBook() { BookId = 3, AuthorsId = 3 });
 
             base.OnModelCreating(modelBuilder);
         }
