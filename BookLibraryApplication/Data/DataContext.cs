@@ -43,7 +43,7 @@ namespace BookLibraryApplication.Data
                     {
                         Id = 3,
                         Title = "Things fall apart",
-                        Description = " Traditionally structured, and peppered with Igbo proverbs, " +
+                        Description = "Traditionally structured, and peppered with Igbo proverbs, " +
                         "it describes the simultaneous disintegration of its protagonist Okonkwo and of his village",
                         ISBN = "0385474547",
                         IsFavorite = false,
