@@ -22,13 +22,13 @@ Go to the project directory
   cd BookLibraryApplication
 ```
 
-Delete Migration and Specify your SqlServer Table Name in the appsettings.json
+Delete the Migrations folder
 
 
-Run your Migration
+Run your Migration in the CLI
 
 ```bash
-  dotnet ef migrations add initialMigration
+  dotnet ef migrations add MyFirstMigration
 ```
 
 Update Database
@@ -37,10 +37,11 @@ Update Database
   dotnet ef database update
 ```
 
-Run the project
+Run the project and test endpoints with seeded data, new data can also be added to test endpoints.
 ## Book Catalogue Features
 
-- Get single book
+- Get all books
+- Get a single book
 - Add New Book
 - Add books to favorite list
 - Get List of favorite books
@@ -62,7 +63,11 @@ Run the project
 
 
 ##  About Me
-I'm a back end developer...
+- Back end developer (.Net, Web Api, Entity Framework, Sql)
+- Project Management Professional(PMP)
+- Microsoft Certified - Azure Associate
+
+
 
 
 ## Acknowledgements
